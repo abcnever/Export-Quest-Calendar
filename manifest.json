@@ -1,0 +1,23 @@
+{
+  "name": "QCE",
+  "version": "1.0",
+  "manifest_version": 2,
+  "description": "First commit",
+  "background": {
+    "page":     "background.html"
+  },
+  "content_scripts": [
+    {
+      "all_frames": true,
+      "matches": ["https://quest.pecs.uwaterloo.ca/*","file:///*"],
+      "js": ["jquery-1.7.2.min.js","content_scripts.js"]
+    }
+  ],
+  "browser_action": {
+    "default_icon": "icon.png"
+  },
+  "content_security_policy": "script-src 'self' https://quest.pecs.uwaterloo.ca; object-src 'self'; unsafe-eval",
+  "permissions": [
+    "tabs"
+  ]
+}
